@@ -11,3 +11,6 @@ brain-games: # запуск игры
 validate: # проверка правильности и корректности файла composer.json
 	composer validate
 
+lint: # запуск PHP_CodeSniffer и проверка каталогов src и bin на соответствие стандарту PSR-12
+	composer exec --verbose phpcs -- --standard=PSR12 src bin
+
