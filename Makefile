@@ -14,3 +14,5 @@ validate: # проверка правильности и корректност�
 lint: # запуск PHP_CodeSniffer и проверка каталогов src и bin на соответствие стандарту PSR-12
 	composer exec --verbose phpcs -- --standard=PSR12 src bin
 
+brain-even: # запуск игры brain-even
+	./bin/brain-even
