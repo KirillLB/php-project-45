@@ -16,3 +16,6 @@ lint: # запуск PHP_CodeSniffer и проверка каталогов src 
 
 brain-even: # запуск игры brain-even
 	./bin/brain-even
+
+brain-calc: # запуск игры brain-calc
+	./bin/brain-calc
