@@ -76,7 +76,7 @@ function playGcd()
     $a = rand(1, 100);
     $b = rand(1, 100);
     $userAnswer = prompt("Question: {$a} {$b} \nYour answer");
-    $rightAnswer = gmp_gcd($a, $b);
+    $rightAnswer = rightGcd($a, $b);
 
     $answers = [];
     return $answers = [$userAnswer, $rightAnswer];
@@ -111,4 +111,13 @@ function playPrime()
     $userAnswer = prompt("Question: {$num} \nYour answer");
     $answers = [$userAnswer, $rightAnswer];
     return $answers;
+}
+function rightGcd($a, $b)
+{
+    while ($b != 0) {
+        $t = $b;
+        $b = $a % $b;
+        $a = $t;
+    }
+    return $a;
 }
