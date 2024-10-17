@@ -29,7 +29,7 @@ function gameEngine($gameType)
         if ($answers[0] == $answers[1]) {
             line('Correct!');
         } else {
-            $finalmessage = "\"{$answers[0]}\" is wrong answer ;(. Correct answer was \"{$answers[1]}\". \nLet's try again, %s!";
+            $finalmessage = "'{$answers[0]}' is wrong answer ;(. Correct answer was '{$answers[1]}'. \nLet's try again, %s!";
             return $finalmessage;
         }
     }
