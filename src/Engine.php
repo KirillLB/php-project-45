@@ -5,9 +5,10 @@ namespace BrainGames\GameEngine;
 use function cli\line;
 use function cli\prompt;
 
-function gameEngine($gameType, $userName)
+function gameEngine(string $gameType, string $userName)
 {
     for ($i = 0; $i < 3; $i++) {
+        $answers = [];
         switch ($gameType) {
             case 'EvenOdd':
                 $answers = playEvenOdd();
@@ -83,8 +84,8 @@ function playGcd()
 }
 function playProgression()
 {
-    unset($progression);
     $progressionLength = rand(5, 10);
+    $progression = [];
     $progression[0] = rand(0, 100);
     $step = rand(1, 5);
 
@@ -97,6 +98,7 @@ function playProgression()
     $stringProgression = implode(' ', $progression);
     $userAnswer = prompt("Question: {$stringProgression} \nYour answer");
     $answers = [$userAnswer, $rightAnswer];
+    unset($progression);
     return $answers;
 }
 function playPrime()
@@ -107,7 +109,7 @@ function playPrime()
     $answers = [$userAnswer, $rightAnswer];
     return $answers;
 }
-function rightGcd($a, $b)
+function rightGcd(int $a, int $b)
 {
     while ($b != 0) {
         $t = $b;
@@ -117,7 +119,7 @@ function rightGcd($a, $b)
     return $a;
 }
 
-function isPrime($num)
+function isPrime(int $num)
 {
     if ($num <= 1) {
         return false;
