@@ -13,6 +13,5 @@ function progression()
     $userName = Cli\helloUser();
     line("What number is missing in the progression?");
 
-    $result = GameEngine\gameEngine('Progression');
-    line($result, $userName);
+    $result = GameEngine\gameEngine('Progression', $userName);
 }

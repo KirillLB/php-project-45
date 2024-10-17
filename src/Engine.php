@@ -5,7 +5,7 @@ namespace BrainGames\GameEngine;
 use function cli\line;
 use function cli\prompt;
 
-function gameEngine($gameType)
+function gameEngine($gameType, $userName)
 {
     for ($i = 0; $i < 3; $i++) {
         switch ($gameType) {
@@ -29,13 +29,13 @@ function gameEngine($gameType)
         if ($answers[0] == $answers[1]) {
             line('Correct!');
         } else {
-            $finalmessage = "'{$answers[0]}' is wrong answer ;(. Correct answer was '{$answers[1]}'. \nLet's try again, %s!";
-            return $finalmessage;
+            $finalmessage = "'{$answers[0]}' is wrong answer ;(. Correct answer was '{$answers[1]}'. \nLet's try again, {$userName}!";
+            return line($finalmessage);
         }
     }
-    $finalmessage = "Congratulations, %s!";
+    $finalmessage = "Congratulations, {$userName}!";
 
-    return $finalmessage;
+    return line($finalmessage);
 }
 
 function playEvenOdd()

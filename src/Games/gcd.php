@@ -13,6 +13,5 @@ function gcd()
     $userName = Cli\helloUser();
     line("Find the greatest common divisor of given numbers.");
 
-    $result = GameEngine\gameEngine('Gcd');
-    line($result, $userName);
+    $result = GameEngine\gameEngine('Gcd', $userName);
 }

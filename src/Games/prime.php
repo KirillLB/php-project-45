@@ -13,6 +13,5 @@ function prime()
     $userName = Cli\helloUser();
     line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
 
-    $result = GameEngine\gameEngine('Prime');
-    line($result, $userName);
+    $result = GameEngine\gameEngine('Prime', $userName);
 }

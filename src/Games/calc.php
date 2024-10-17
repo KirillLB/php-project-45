@@ -13,6 +13,5 @@ function calc()
     $userName = Cli\helloUser();
     line("What is the result of the expression?");
 
-    $result = GameEngine\gameEngine('Calc');
-    line($result, $userName);
+    GameEngine\gameEngine('Calc', $userName);
 }
