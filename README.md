@@ -14,3 +14,6 @@ https://asciinema.org/a/BRwwa3nKEz1HeFSxpuiulsACl
 
 Аскинема запуска игры brain-progression:
 https://asciinema.org/a/yNzAdVbxUoWnByWJVHxJ73M4X
+
+Аскинема запуска игры brain-prime:
+https://asciinema.org/a/IUrE5JrSZeGXpFWTHWFxxA42D

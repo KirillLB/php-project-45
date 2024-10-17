@@ -56,6 +56,17 @@ function gameEngine($gameType)
                 $progression[$hidedPosition - 1] = '..';
                 $userAnswer = prompt("Question: " . implode(' ',$progression) . "\nYour answer");
                 break;
+            case 'Prime':
+                $num = rand(1, 150);
+                $rightAnswer = '';
+                if (gmp_prob_prime($num) !== 0) {
+                    $rightAnswer = 'yes';
+                }
+                else {
+                    $rightAnswer = 'no';
+                }
+                $userAnswer = prompt("Question: " . $num . "\nYour answer");
+                break;
         }
            
         if ($userAnswer == $rightAnswer) {

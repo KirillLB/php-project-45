@@ -25,3 +25,6 @@ brain-gcd: # запуск игры brain-gcd
 
 brain-progression: # запуск игры brain-progression
 	./bin/brain-progression
+
+brain-prime: # запуск игры brain-prime
+	./bin/brain-prime
