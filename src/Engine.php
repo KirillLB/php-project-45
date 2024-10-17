@@ -52,19 +52,19 @@ function playCalc()
 {
     $a = rand(0, 100);
     $b = rand(0, 100);
-    $operation = [' + ', ' - ', ' * '];
+    $operation = ['+', '-', '*'];
 
     $operand = $operation[rand(0, count($operation) - 1)];
     $userAnswer = prompt("Question: {$a} {$operand} {$b} \nYour answer");
 
     switch ($operand) {
-        case ' + ':
+        case '+':
             $rightAnswer = $a + $b;
             break;
-        case ' - ':
+        case '-':
             $rightAnswer = $a - $b;
             break;
-        case ' * ':
+        case '*':
             $rightAnswer = $a * $b;
             break;
     }
