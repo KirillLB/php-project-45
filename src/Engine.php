@@ -11,7 +11,7 @@ function gameEngine($gameType)
         switch ($gameType) {
             case 'EvenOdd':
                 $randNum = rand(1, 100);
-                $userAnswer = strtolower(prompt("Question: " . $randNum . "\nYour answer"));
+                $userAnswer = strtolower(prompt("Question: {$randNum} \nYour answer"));
     
                 $rightAnswer = $randNum % 2 == 0 ? 'yes' : 'no';
                 break;
@@ -21,7 +21,7 @@ function gameEngine($gameType)
                 $operation = [' + ', ' - ', ' * '];
 
                 $operand = $operation[rand(0, count($operation) - 1)];
-                $userAnswer = prompt("Question: " . $a . $operand . $b . "\nYour answer");
+                $userAnswer = prompt("Question: {$a} {$operand} {$b} \nYour answer");
 
                 switch ($operand) {
                     case ' + ':
@@ -38,7 +38,7 @@ function gameEngine($gameType)
             case 'Gcd':
                 $a = rand(1, 100);
                 $b = rand(1, 100);
-                $userAnswer = prompt("Question: " . $a . ' ' . $b . "\nYour answer");
+                $userAnswer = prompt("Question: {$a} {$b} \nYour answer");
                 $rightAnswer = gmp_gcd($a, $b);
                 break;
             case 'Progression':
@@ -54,7 +54,8 @@ function gameEngine($gameType)
                 $hidedPosition = rand(1, $progressionLength);
                 $rightAnswer = $progression[$hidedPosition - 1];
                 $progression[$hidedPosition - 1] = '..';
-                $userAnswer = prompt("Question: " . implode(' ',$progression) . "\nYour answer");
+                $stringProgression = implode(' ',$progression);
+                $userAnswer = prompt("Question: {$stringProgression} \nYour answer");
                 break;
             case 'Prime':
                 $num = rand(1, 150);
@@ -65,14 +66,14 @@ function gameEngine($gameType)
                 else {
                     $rightAnswer = 'no';
                 }
-                $userAnswer = prompt("Question: " . $num . "\nYour answer");
+                $userAnswer = prompt("Question: {$num} \nYour answer");
                 break;
         }
            
         if ($userAnswer == $rightAnswer) {
             line('Correct!');
         } else {
-            $finalmessage = line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer) . "Let's try again, %s!";
+            $finalmessage = "'{$userAnswer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'. \nLet's try again, %s!";
             return $finalmessage;
         }
     }
