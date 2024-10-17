@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace BrainGames\GameEngine;
 
@@ -25,11 +25,11 @@ function gameEngine($gameType)
                 $answers = playPrime();
                 break;
         }
-           
+
         if ($answers[0] == $answers[1]) {
             line('Correct!');
         } else {
-            $finalmessage = "'{$answers[0]}' is wrong answer ;(. Correct answer was '{$answers[1]}'. \nLet's try again, %s!";
+            $finalmessage = "\"{$answers[0]}\" is wrong answer ;(. Correct answer was \"{$answers[1]}\". \nLet's try again, %s!";
             return $finalmessage;
         }
     }
@@ -38,7 +38,8 @@ function gameEngine($gameType)
     return $finalmessage;
 }
 
-function playEvenOdd() {
+function playEvenOdd()
+{
     $randNum = rand(1, 100);
     $userAnswer = strtolower(prompt("Question: {$randNum} \nYour answer"));
 
@@ -47,7 +48,8 @@ function playEvenOdd() {
     $answers = [$userAnswer, $rightAnswer];
     return $answers;
 }
-function playCalc() {
+function playCalc()
+{
     $a = rand(0, 100);
     $b = rand(0, 100);
     $operation = [' + ', ' - ', ' * '];
@@ -69,7 +71,8 @@ function playCalc() {
     $answers = [$userAnswer, $rightAnswer];
     return $answers;
 }
-function playGcd() {
+function playGcd()
+{
     $a = rand(1, 100);
     $b = rand(1, 100);
     $userAnswer = prompt("Question: {$a} {$b} \nYour answer");
@@ -78,31 +81,31 @@ function playGcd() {
     $answers = [];
     return $answers = [$userAnswer, $rightAnswer];
 }
-function playProgression() {
+function playProgression()
+{
     unset($progression);
-    $progressionLength = rand(5,10);
+    $progressionLength = rand(5, 10);
     $progression[0] = rand(0, 100);
     $step = rand(1, 5);
 
     for ($j = 1; $j < $progressionLength; $j++) {
         $progression[$j] = $progression[$j - 1] + $step;
     }
-    
     $hidedPosition = rand(1, $progressionLength);
     $rightAnswer = $progression[$hidedPosition - 1];
     $progression[$hidedPosition - 1] = '..';
-    $stringProgression = implode(' ',$progression);
+    $stringProgression = implode(' ', $progression);
     $userAnswer = prompt("Question: {$stringProgression} \nYour answer");
     $answers = [$userAnswer, $rightAnswer];
     return $answers;
 }
-function playPrime() {
+function playPrime()
+{
     $num = rand(1, 150);
     $rightAnswer = '';
     if (gmp_prob_prime($num) !== 0) {
         $rightAnswer = 'yes';
-    }
-    else {
+    } else {
         $rightAnswer = 'no';
     }
     $userAnswer = prompt("Question: {$num} \nYour answer");
