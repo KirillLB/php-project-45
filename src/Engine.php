@@ -102,12 +102,7 @@ function playProgression()
 function playPrime()
 {
     $num = rand(1, 150);
-    $rightAnswer = '';
-    if (gmp_prob_prime($num) !== 0) {
-        $rightAnswer = 'yes';
-    } else {
-        $rightAnswer = 'no';
-    }
+    $rightAnswer = isPrime($num) ? 'yes' : 'no';
     $userAnswer = prompt("Question: {$num} \nYour answer");
     $answers = [$userAnswer, $rightAnswer];
     return $answers;
@@ -120,4 +115,17 @@ function rightGcd($a, $b)
         $a = $t;
     }
     return $a;
+}
+
+function isPrime($num)
+{
+    if ($num <= 1) {
+        return false;
+    }
+    for ($i = 2; $i <= sqrt($num); $i++) {
+        if ($num % $i == 0) {
+            return false;
+        }
+    }
+    return true;
 }
