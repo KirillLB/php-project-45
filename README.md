@@ -16,4 +16,4 @@ https://asciinema.org/a/BRwwa3nKEz1HeFSxpuiulsACl
 https://asciinema.org/a/yNzAdVbxUoWnByWJVHxJ73M4X
 
 Аскинема запуска игры brain-prime:
-https://asciinema.org/a/IUrE5JrSZeGXpFWTHWFxxA42D
+https://asciinema.org/a/fUk1cIoOfrLTc39jtUMIQ7wJq
