@@ -11,3 +11,6 @@ https://asciinema.org/a/681250
 
 Аскинема запуска игры brain-gcd:
 https://asciinema.org/a/BRwwa3nKEz1HeFSxpuiulsACl
+
+Аскинема запуска игры brain-progression:
+https://asciinema.org/a/yNzAdVbxUoWnByWJVHxJ73M4X

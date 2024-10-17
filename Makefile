@@ -22,3 +22,6 @@ brain-calc: # запуск игры brain-calc
 
 brain-gcd: # запуск игры brain-gcd
 	./bin/brain-gcd
+
+brain-progression: # запуск игры brain-progression
+	./bin/brain-progression

@@ -41,12 +41,27 @@ function gameEngine($gameType)
                 $userAnswer = prompt("Question: " . $a . ' ' . $b . "\nYour answer");
                 $rightAnswer = gmp_gcd($a, $b);
                 break;
+            case 'Progression':
+                unset($progression);
+                $progressionLength = rand(5,10);
+                $progression[0] = rand(0, 100);
+                $step = rand(1, 5);
+
+                for ($j = 1; $j < $progressionLength; $j++) {
+                    $progression[$j] = $progression[$j - 1] + $step;
+                }
+                
+                $hidedPosition = rand(1, $progressionLength);
+                $rightAnswer = $progression[$hidedPosition - 1];
+                $progression[$hidedPosition - 1] = '..';
+                $userAnswer = prompt("Question: " . implode(' ',$progression) . "\nYour answer");
+                break;
         }
            
         if ($userAnswer == $rightAnswer) {
             line('Correct!');
         } else {
-            $finalmessage = line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer) . " Let's try again, %s!";
+            $finalmessage = line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $rightAnswer) . "Let's try again, %s!";
             return $finalmessage;
         }
     }
@@ -54,5 +69,3 @@ function gameEngine($gameType)
 
     return $finalmessage;
 }
-
-

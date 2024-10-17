@@ -6,6 +6,7 @@
             "src/Games/evenOdd.php",
 	        "src/Games/calc.php",
             "src/Games/gcd.php",
+            "src/Games/progression.php",
             "src/Engine.php"
         ]
     },
@@ -18,7 +19,8 @@
         "bin/brain-games",
         "bin/brain-even",
 	    "bin/brain-calc",
-        "bin/brain-gcd"
+        "bin/brain-gcd",
+        "bin/brain-progression"
     ],
     "require": {
         "wp-cli/php-cli-tools": "^0.12.0"
