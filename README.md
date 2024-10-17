@@ -3,8 +3,11 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/fcf5fc7ad2fa1b6ce699/maintainability)](https://codeclimate.com/github/KirillLB/php-project-45/maintainability)
 
-Аскинема с примером установки зависимостей make install и запуска игры make brain-even:
+Аскинема запуска игры brain-even:
 https://asciinema.org/a/680986
 
-Аскинема запуска игры make brain-calc:
+Аскинема запуска игры brain-calc:
 https://asciinema.org/a/681250
+
+Аскинема запуска игры brain-gcd:
+https://asciinema.org/a/BRwwa3nKEz1HeFSxpuiulsACl

@@ -19,3 +19,6 @@ brain-even: # запуск игры brain-even
 
 brain-calc: # запуск игры brain-calc
 	./bin/brain-calc
+
+brain-gcd: # запуск игры brain-gcd
+	./bin/brain-gcd
