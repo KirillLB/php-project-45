@@ -5,7 +5,7 @@ namespace BrainGames\GameEngine;
 use function cli\line;
 use function cli\prompt;
 
-function gameEngine(string $userName, array $answers = [], $final = false)
+function gameEngine(string $userName, array $answers = [], bool $final = false)
 {
     if ($final) {
         line("Congratulations, {$userName}!");
