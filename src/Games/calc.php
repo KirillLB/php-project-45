@@ -13,5 +13,29 @@ function calc()
     $userName = Cli\helloUser();
     line("What is the result of the expression?");
 
-    GameEngine\gameEngine('Calc', $userName);
+    for ($i = 0; $i < 3; $i++) {
+        $a = rand(0, 100);
+        $b = rand(0, 100);
+        $operation = ['+', '-', '*'];
+
+        $operand = $operation[rand(0, count($operation) - 1)];
+        $userAnswer = prompt("Question: {$a} {$operand} {$b} \nYour answer");
+
+        switch ($operand) {
+            case '+':
+                $rightAnswer = $a + $b;
+                break;
+            case '-':
+                $rightAnswer = $a - $b;
+                break;
+            case '*':
+                $rightAnswer = $a * $b;
+                break;
+        }
+
+        if (!GameEngine\gameEngine($userName, [$userAnswer, $rightAnswer])) {
+            return;
+        }
+    }
+    GameEngine\gameEngine($userName, [], true);
 }

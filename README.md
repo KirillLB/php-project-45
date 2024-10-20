@@ -3,6 +3,9 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/fcf5fc7ad2fa1b6ce699/maintainability)](https://codeclimate.com/github/KirillLB/php-project-45/maintainability)
 
+Аскинема установки зависимостей wp-cli/php-cli-tools и squizlabs/php_codesniffer
+https://asciinema.org/a/4WdR0FqSscyL03sfsa8txEdBy
+
 Аскинема запуска игры brain-even:
 https://asciinema.org/a/680986
 
