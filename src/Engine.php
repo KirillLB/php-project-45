@@ -5,16 +5,24 @@ namespace BrainGames\GameEngine;
 use function cli\line;
 use function cli\prompt;
 
-function gameEngine(string $userName, array $answers = [], bool $final = false)
+const QUESTIONS_AMOUNT = 3;
+
+function runEngine(string $userName = "", string $text = "", string $question = "", array $userAnswers = [], bool $final = false)
 {
-    if ($final) {
-        line("Congratulations, {$userName}!");
-    } else {
-        if ($answers[0] == $answers[1]) {
+    if ($text) {
+        line($text);
+    }
+
+    if ($question) {
+        return strtolower(prompt($question));
+    }
+
+    if (!empty($userAnswers)) {
+        if ($userAnswers[0] == $userAnswers[1]) {
             line('Correct!');
             return true;
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!", $answers[0], $answers[1], $userName);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!", $userAnswers[0], $userAnswers[1], $userName);
             return false;
         }
     }

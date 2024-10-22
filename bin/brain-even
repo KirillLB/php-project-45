@@ -14,4 +14,4 @@ if (file_exists($autoloadPath1)) {
 
 use BrainGames\EvenOdd;
 
-EvenOdd\evenOdd();
+EvenOdd\playEvenOdd();

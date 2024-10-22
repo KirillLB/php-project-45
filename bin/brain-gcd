@@ -14,4 +14,4 @@ if (file_exists($autoloadPath1)) {
 
 use BrainGames\Gcd;
 
-Gcd\gcd();
+Gcd\playGcd();
