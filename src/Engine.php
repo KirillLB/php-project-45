@@ -4,7 +4,6 @@ namespace BrainGames\GameEngine;
 
 use function cli\line;
 use function cli\prompt;
-
 use function BrainGames\Cli\helloUser;
 
 const QUESTIONS_AMOUNT = 3;
