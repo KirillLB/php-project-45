@@ -10,20 +10,19 @@ use function cli\prompt;
 
 function playPrime()
 {
-    $userName = Cli\helloUser();
-    line("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
+    $preamble = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
 
-    for ($i = 0; $i < QUESTIONS_AMOUNT; $i++) {
+    $questions = [];
+    $correctAnswers = [];
+
+    for ($i = 0; $i < GameEngine\QUESTIONS_AMOUNT; $i++) {
         $num = rand(1, 150);
-        $rightAnswer = isPrime($num) ? 'yes' : 'no';
-        $userAnswer = prompt("Question: {$num} \nYour answer");
-
-        if (!GameEngine\runEngine($userName, [$userAnswer, $rightAnswer])) {
-            return;
-        }
+        $questions[] = $num;
+        $correctAnswers[] = isPrime($num) ? 'yes' : 'no';
     }
-    GameEngine\runEngine($userName, [], true);
+    GameEngine\runEngine($preamble, $questions, $correctAnswers);
 }
+
 
 function isPrime(int $num)
 {

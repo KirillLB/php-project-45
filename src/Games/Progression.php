@@ -10,10 +10,12 @@ use function cli\prompt;
 
 function playProgression()
 {
-    $userName = Cli\helloUser();
-    line("What number is missing in the progression?");
+    $preamble = "What number is missing in the progression?";
 
-    for ($i = 0; $i < QUESTIONS_AMOUNT; $i++) {
+    $questions = [];
+    $correctAnswers = [];
+
+    for ($i = 0; $i < GameEngine\QUESTIONS_AMOUNT; $i++) {
         $progressionLength = rand(5, 10);
         $progression = [];
         $progression[0] = rand(0, 100);
@@ -23,15 +25,11 @@ function playProgression()
             $progression[$j] = $progression[$j - 1] + $step;
         }
         $hidedPosition = rand(1, $progressionLength);
-        $rightAnswer = $progression[$hidedPosition - 1];
+        $correctAnswers[] = $progression[$hidedPosition - 1];
         $progression[$hidedPosition - 1] = '..';
         $stringProgression = implode(' ', $progression);
-        $userAnswer = prompt("Question: {$stringProgression} \nYour answer");
+        $questions[] = $stringProgression;
         unset($progression);
-
-        if (!GameEngine\runEngine($userName, [$userAnswer, $rightAnswer])) {
-            return;
-        }
     }
-    GameEngine\runEngine($userName, [], true);
+    GameEngine\runEngine($preamble, $questions, $correctAnswers);
 }
