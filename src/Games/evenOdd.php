@@ -16,6 +16,5 @@ function playEvenOdd()
         $questions[] = $randNum;
         $correctAnswers[] = $randNum % 2 == 0 ? 'yes' : 'no';
     }
-
     GameEngine\runEngine($preamble, $questions, $correctAnswers);
 }
