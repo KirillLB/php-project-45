@@ -20,3 +20,5 @@
 
 Аскинема запуска игры brain-prime:
 [![asciicast](https://asciinema.org/a/fUk1cIoOfrLTc39jtUMIQ7wJq.svg)](https://asciinema.org/a/fUk1cIoOfrLTc39jtUMIQ7wJq)
+
+_
