@@ -2,16 +2,12 @@
 
 namespace BrainGames\Progression;
 
-use BrainGames\Cli;
 use BrainGames\GameEngine;
 
-use function cli\line;
-use function cli\prompt;
+const PREAMBLE = "What number is missing in the progression?";
 
-function playProgression()
+function playProgression(): void
 {
-    $preamble = "What number is missing in the progression?";
-
     $questions = [];
     $correctAnswers = [];
 
@@ -31,5 +27,5 @@ function playProgression()
         $questions[] = $stringProgression;
         unset($progression);
     }
-    GameEngine\runEngine($preamble, $questions, $correctAnswers);
+    GameEngine\runEngine(PREAMBLE, $questions, $correctAnswers);
 }

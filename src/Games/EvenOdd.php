@@ -4,10 +4,10 @@ namespace BrainGames\EvenOdd;
 
 use BrainGames\GameEngine;
 
-function playEvenOdd()
-{
-    $preamble = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+const PREAMBLE = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
+function playEvenOdd(): void
+{
     $questions = [];
     $correctAnswers = [];
 
@@ -16,5 +16,5 @@ function playEvenOdd()
         $questions[] = $randNum;
         $correctAnswers[] = $randNum % 2 == 0 ? 'yes' : 'no';
     }
-    GameEngine\runEngine($preamble, $questions, $correctAnswers);
+    GameEngine\runEngine(PREAMBLE, $questions, $correctAnswers);
 }

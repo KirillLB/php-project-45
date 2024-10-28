@@ -2,16 +2,12 @@
 
 namespace BrainGames\Prime;
 
-use BrainGames\Cli;
 use BrainGames\GameEngine;
 
-use function cli\line;
-use function cli\prompt;
+const PREAMBLE = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
 
-function playPrime()
+function playPrime(): void
 {
-    $preamble = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
-
     $questions = [];
     $correctAnswers = [];
 
@@ -20,7 +16,7 @@ function playPrime()
         $questions[] = $num;
         $correctAnswers[] = isPrime($num) ? 'yes' : 'no';
     }
-    GameEngine\runEngine($preamble, $questions, $correctAnswers);
+    GameEngine\runEngine(PREAMBLE, $questions, $correctAnswers);
 }
 
 

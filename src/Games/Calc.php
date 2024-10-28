@@ -4,10 +4,10 @@ namespace BrainGames\Calc;
 
 use BrainGames\GameEngine;
 
-function playCalculator()
-{
-    $preamble = "What is the result of the expression?";
+const PREAMBLE = "What is the result of the expression?";
 
+function playCalculator(): void
+{
     $questions = [];
     $correctAnswers = [];
 
@@ -15,7 +15,7 @@ function playCalculator()
         $a = rand(0, 100);
         $b = rand(0, 100);
         $operation = ['+', '-', '*'];
-        $operand = $operation[rand(0, count($operation) - 1)];
+        $operand = $operation[array_rand($operation)];
 
         switch ($operand) {
             case '+':
@@ -31,5 +31,5 @@ function playCalculator()
 
         $questions[] = "{$a} {$operand} {$b}";
     }
-    GameEngine\runEngine($preamble, $questions, $correctAnswers);
+    GameEngine\runEngine(PREAMBLE, $questions, $correctAnswers);
 }

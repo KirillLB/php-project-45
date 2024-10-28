@@ -4,13 +4,14 @@ namespace BrainGames\GameEngine;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Cli\helloUser;
 
 const QUESTIONS_AMOUNT = 3;
 
-function runEngine(string $preamble, array $questions, array $correctAnswers)
+function runEngine(string $preamble, array $questions, array $correctAnswers): bool
 {
-    $userName = helloUser();
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
     line($preamble);
 
     for ($i = 0; $i < QUESTIONS_AMOUNT; $i++) {
@@ -19,10 +20,11 @@ function runEngine(string $preamble, array $questions, array $correctAnswers)
         if ($userAnswer == $correctAnswers[$i]) {
             line('Correct!');
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!", $userAnswer, $correctAnswers[$i], $userName);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'. \nLet's try again, %s!", $userAnswer, $correctAnswers[$i], $name);
             return false;
         }
     }
 
-    line("Congratulations, {$userName}!");
+    line("Congratulations, {$name}!");
+    return true;
 }
